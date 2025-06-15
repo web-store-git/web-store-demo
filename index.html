@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webstore – Hero + Transparent Nav</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- A tiny helper for smooth slide -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="antialiased">
+
+<!-- ═════════════ NAVBAR (transparent) ═════════════ -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300"">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- Mobile hamburger -->
+            <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent focus:ring-blue-500">
+                <svg id="menu-icon-btn" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex space-x-8 text-white font-medium desktop-menu">
+                <a href="#" class="hover:text-blue-300">Home</a>
+                <a href="#" class="hover:text-blue-300">About</a>
+                <a href="#" class="hover:text-blue-300">Our Services</a>
+                <a href="#" class="hover:text-blue-300">Contact Us</a>
+            </div>
+
+            <!-- Logo -->
+            <img src="assets/image/logo.png" alt="Webstore Logo" class="w-64">
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-menu"
+         class="fixed top-0 left-0 w-64 h-full bg-black/90 backdrop-blur-sm text-white transform -translate-x-full transition-transform md:hidden z-50">
+        <div class="flex items-center justify-between p-4 border-b border-white/20">
+            <span class="text-lg font-semibold">Menu</span>
+            <button id="close-btn"
+                    class="p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="p-6 flex flex-col space-y-6 font-medium">
+            <a href="#" class="hover:text-blue-300">Home</a>
+            <a href="#" class="hover:text-blue-300">About</a>
+            <a href="#" class="hover:text-blue-300">Our Services</a>
+            <a href="#" class="hover:text-blue-300">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═════════════ HERO SECTION (full screen) ═════════════ -->
+<section
+        class="relative h-screen flex items-center justify-center text-center px-4"
+        style="background-image:url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1950&q=80'); background-size:cover; background-position:center;">
+    <!-- overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- content -->
+    <div class="relative z-10 max-w-2xl text-white space-y-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Welcome to <span class="text-blue-400">Webstore</span>
+        </h1>
+        <p class="text-lg sm:text-xl opacity-90">
+            The easiest way to grow your business online. Start building your dream store today!
+        </p>
+        <a href="#"
+           class="inline-block px-8 py-3 rounded-full bg-blue-500 hover:bg-blue-600 focus-visible:outline focus-visible:ring-4 focus-visible:ring-blue-300 font-semibold uppercase tracking-wider">
+            Get Started
+        </a>
+    </div>
+</section>
+
+<!-- ═════════════ PORTFOLIO SECTION ═════════════ -->
+<section id="portfolio" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900">
+            Portfolio
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-center text-gray-600">
+            A glimpse of the products we’ve recently crafted for our amazing clients.
+        </p>
+
+        <!-- Card grid -->
+        <div class="mt-12 grid gap-8
+                grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- CARD 1 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img1.png" alt="Product 1"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-300">
+                    <h3 class="text-white text-xl font-semibold">Smart Gadget</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Sleek design &amp; advanced IoT features that keep you connected.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img2.png" alt="Product 2"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-white text-xl font-semibold">Pro Headset</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Immersive audio experience with active noise cancellation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img3.png" alt="Product 3"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-white text-xl font-semibold">Luxury Watch</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Timeless craftsmanship meets modern smart features.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img4.png" alt="Product 4"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-white text-xl font-semibold">Ultra Laptop</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Power &amp; portability packed into a minimalist aluminum body.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img5.png" alt="Product 5"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-white text-xl font-semibold">HD Camera</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Capture every moment in stunning 8K detail and rich color.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+                <img src="assets/image/img6.png" alt="Product 6"
+                     class="absolute inset-0 w-full h-full object-cover
+                    transition-transform duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center
+                    justify-center text-center px-4
+                    opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-white text-xl font-semibold">Air Sneakers</h3>
+                    <p class="mt-2 text-white text-sm">
+                        Lightweight kicks engineered for ultimate comfort &amp; style.
+                    </p>
+                </div>
+            </div>
+
+        </div><!-- /grid -->
+    </div><!-- /container -->
+</section>
+<!-- ═══════════════════════════════════════════════ -->
+
+<!-- ═════════════ SERVICE HIGHLIGHTS SECTION ═════════════ -->
+<section id="services" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- heading -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900">
+            What We Build
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-center text-gray-600">
+            From lightning‑fast websites to delightful mobile apps – we’ve got you covered.
+        </p>
+
+        <!-- grey board with blue border -->
+        <div class="mt-12 p-8 px-0 grid gap-8 grid-cols-1 md:grid-cols-2">
+
+            <!-- ── row 1 ── image (left) + copy (right) -->
+            <div class="flex items-center justify-center">
+                <img src="assets/image/img7.png" alt="For Web" class="object-cover rounded-lg shadow-lg">
+            </div>
+            <div class="flex flex-col items-center md:items-start justify-center text-center md:text-left">
+                <h3 class="text-2xl font-semibold mb-2">Custom Web Solutions</h3>
+                <p class="text-gray-700 max-w-md">
+                    SEO‑friendly, blazing‑fast, and fully responsive websites crafted to grow your business online.
+                </p>
+            </div>
+
+            <!-- ── row 2 ── copy (left) + image (right)  -->
+            <div class="order-2 md:order-none flex flex-col items-center md:items-end justify-center text-center md:text-right">
+                <h3 class="text-2xl font-semibold mb-2">Mobile App Development</h3>
+                <p class="text-gray-700 max-w-md">
+                    Native &amp; cross‑platform apps engineered for performance and a delightful user experience.
+                </p>
+            </div>
+            <div class="order-1 md:order-none flex items-center justify-center">
+                <img src="assets/image/img8.png" alt="For Apps" class="object-cover rounded-lg shadow-lg">
+            </div>
+
+        </div><!-- /blue‑border box -->
+    </div><!-- /container -->
+</section>
+<!-- ════════════════════════════════════════════════════ -->
+
+<!-- ═════════════ OUR SERVICES SECTION ═════════════ -->
+<section id="our-services" class="py-24 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- heading -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900">
+            Our Services
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-center text-gray-600">
+            Everything you need – from idea to launch &amp; beyond.
+        </p>
+
+        <!-- ––––––––––––– START CARDS ––––––––––––– -->
+        <div class="mt-16 space-y-16">
+
+            <!-- CARD 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] bg-white rounded-xl overflow-hidden">
+                <!-- text (two items) -->
+                <div class="order-2 md:order-1 flex flex-col justify-center p-10 space-y-10">
+                    <!-- item 1 -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">Custom Website Development</h3>
+                        <p class="text-gray-700">From portfolio sites to business websites – we craft tailored, responsive websites.</p>
+                    </div>
+                    <!-- item 2 -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">Mobile App Development</h3>
+                        <p class="text-gray-700">We develop Android and iOS apps for startups, businesses, and individuals.</p>
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="order-1 md:order-2">
+                    <img src="assets/image/img1.png" alt="Web & App Development" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] bg-white rounded-xl overflow-hidden">
+                <!-- text -->
+                <div class="order-2 md:order-1 flex flex-col justify-center p-10 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">E‑commerce Solutions</h3>
+                        <p class="text-gray-700">Sell online with powerful platforms like Shopify, WooCommerce, or custom builds.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">UI/UX Design</h3>
+                        <p class="text-gray-700">Beautiful and user‑friendly interfaces that convert and engage your users.</p>
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="order-1 md:order-2">
+                    <img src="assets/image/img2.png" alt="E‑commerce & Design" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] bg-white rounded-xl overflow-hidden">
+                <div class="order-2 md:order-1 flex flex-col justify-center p-10 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">Website Maintenance</h3>
+                        <p class="text-gray-700">Affordable website and app support &amp; updates on demand.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">API Services</h3>
+                        <p class="text-gray-700">QR Code &amp; payment APIs that simplify transactions for your users.</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="assets/image/img3.png" alt="Maintenance & API" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] bg-white rounded-xl overflow-hidden">
+                <div class="order-2 md:order-1 flex flex-col justify-center p-10 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">SEO &amp; Digital Marketing</h3>
+                        <p class="text-gray-700">Rank higher, drive traffic &amp; grow your brand with data‑driven campaigns.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">Website &amp; Logo Design</h3>
+                        <p class="text-gray-700">Modern, secure websites and memorable branding created with the latest tech.</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="assets/image/img4.png" alt="Marketing & Branding" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center min-h-[70vh] bg-white rounded-xl overflow-hidden">
+                <div class="order-2 md:order-1 flex flex-col justify-center p-10 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">AEPS Software</h3>
+                        <p class="text-gray-700">Money transfer &amp; utility bill payment solutions at reasonable prices.</p>
+                    </div>
+                    <!-- extra slot (easy future add) -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-1">Coming Soon</h3>
+                        <p class="text-gray-700">More exciting services are on the way – stay tuned!</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="assets/image/img5.png" alt="AEPS Software" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div><!-- /space‑y‑cards -->
+    </div><!-- /container -->
+</section>
+<!-- ════════════════════════════════════════════════════ -->
+
+<!-- ═════════════ WHY CHOOSE US SECTION ═════════════ -->
+<section id="why-choose-us" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900">
+            Why Choose Us?
+        </h2>
+        <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
+            Find answers to the most common questions about Flowbite &amp; Tailwind CSS below.
+        </p>
+
+        <!-- Accordion -->
+        <div id="accordion-flush" class="mt-16" data-accordion="collapse" data-active-classes="text-gray-900" data-inactive-classes="text-gray-500">
+
+            <!-- Item 1 -->
+            <h2 id="accordion-flush-heading-1" class="bg-white px-4 rounded-lg">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-1"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-1">
+                    <span>Custom Solutions for Every Need?</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-1" class="hidden"
+                 aria-labelledby="accordion-flush-heading-1">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        We provide tailor-made solutions to create the perfect website for your business needs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <h2 id="accordion-flush-heading-2" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-2"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-2">
+                    <span>Expert Developers & Designers</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-2" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        Our team consists of experienced developers and creative designers who ensure your website is professional and user-friendly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <h2 id="accordion-flush-heading-3" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-3"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-3">
+                    <span>Affordable Pricing & Transparent Process</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-3" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        We offer budget-friendly rates with a transparent process—no hidden charges!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <h2 id="accordion-flush-heading-4" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-4"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-4">
+                    <span>SEO & Mobile-Friendly Websites</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-4" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        Your website will be SEO optimized and mobile-friendly, making it easily accessible to your customers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <h2 id="accordion-flush-heading-5" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-5"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-5">
+                    <span>24/7 Support & Maintenance</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-5" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        Even after launch, we provide continuous support to keep your website running smoothly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <h2 id="accordion-flush-heading-6" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-6"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-6">
+                    <span>Fast & Secure Development</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-6" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        We use the latest technology to build secure and high-speed websites.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <h2 id="accordion-flush-heading-7" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-7"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-7">
+                    <span>Low Cost & Unique Stretagy</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-7" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        We always provide you an advanced technology in less than market price.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <h2 id="accordion-flush-heading-8" class="bg-white px-4 rounded-lg mt-5">
+                <button type="button"
+                        class="group flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 gap-3"
+                        data-accordion-target="#accordion-flush-body-8"
+                        aria-expanded="false"
+                        aria-controls="accordion-flush-body-8">
+                    <span>Safe & Sequre Platform</span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                      <!-- Plus Icon (Shown when collapsed) -->
+                      <svg class="w-4 h-4 block group-aria-expanded:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                        <!-- Minus Icon (Shown when expanded) -->
+                      <svg class="w-4 h-4 hidden group-aria-expanded:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                      </svg>
+                    </span>
+                </button>
+            </h2>
+            <div id="accordion-flush-body-8" class="hidden"
+                 aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        We always prepare a simple and secure software for you.
+                    </p>
+                </div>
+            </div>
+
+        </div><!-- /accordion -->
+    </div><!-- /container -->
+</section>
+<!-- ════════════════════════════════════════════════ -->
+
+<!-- ═════════════ CLIENT REVIEWS SECTION ═════════════ -->
+<section id="reviews" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900">
+            Client Reviews
+        </h2>
+        <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">
+            Hear what our customers have to say about us.
+        </p>
+
+        <!-- Swiper container -->
+        <div class="relative mt-12">
+            <!-- Slider main wrapper -->
+            <div class="swiper review-swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- CARD 1 -->
+                    <div class="swiper-slide">
+                        <div class="h-full flex flex-col items-center text-center rounded-xl
+                     bg-white/10 backdrop-blur p-6">
+                            <img src="assets/image/users/avatar-1.jpg"
+                                 class="w-24 h-24 rounded-full object-cover mb-4"
+                                 alt="Client 1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Anjali Patel</h3>
+
+                            <!-- Stars -->
+                            <div class="flex gap-0.5 mb-4">
+                                <template id="star">
+                                    <svg class="w-5 h-5 text-yellow-400"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                         fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.945a1
+                             1 0 00.95.69h4.15c.969 0 1.371 1.24.588 1.81l-3.36
+                             2.44a1 1 0 00-.364 1.118l1.287 3.945c.3.921-.755
+                             1.688-1.538 1.118l-3.36-2.44a1 1 0
+                             00-1.175 0l-3.36 2.44c-.783.57-1.838-.197-1.539-1.118l1.287-3.945a1
+                             1 0 00-.364-1.118l-3.36-2.44c-.783-.57-.38-1.81.588-1.81h4.15a1
+                             1 0 00.95-.69l1.286-3.945z" />
+                                    </svg>
+                                </template>
+                                <!-- 5 stars -->
+                                <script>
+                                    // quick inline clone 5 stars
+                                    document.currentScript.parentElement.append(
+                                        ...Array.from({length:5},()=>document.getElementById('star').content.cloneNode(true))
+                                    );
+                                </script>
+                            </div>
+
+                            <p class="text-gray-700 text-sm">
+                                “Fantastic experience! The team delivered exactly what we needed
+                                and exceeded expectations.”
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="swiper-slide">
+                        <div class="h-full flex flex-col items-center text-center rounded-xl
+                     bg-white/10 backdrop-blur p-6">
+                            <img src="assets/image/users/avatar-2.jpg"
+                                 class="w-24 h-24 rounded-full object-cover mb-4"
+                                 alt="Client 2">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Rahul Mehta</h3>
+                            <div class="flex gap-0.5 mb-4">
+                                <script>
+                                    document.currentScript.parentElement.append(
+                                        ...Array.from({length:5},()=>document.getElementById('star').content.cloneNode(true))
+                                    );
+                                </script>
+                            </div>
+                            <p class="text-gray-700 text-sm">
+                                “Their customer support is outstanding. Highly recommend working
+                                with this company.”
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="swiper-slide">
+                        <div class="h-full flex flex-col items-center text-center rounded-xl
+                     bg-white/10 backdrop-blur p-6">
+                            <img src="assets/image/users/avatar-3.jpg"
+                                 class="w-24 h-24 rounded-full object-cover mb-4"
+                                 alt="Client 3">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Maya Shah</h3>
+                            <div class="flex gap-0.5 mb-4">
+                                <script>
+                                    document.currentScript.parentElement.append(
+                                        ...Array.from({length:5},()=>document.getElementById('star').content.cloneNode(true))
+                                    );
+                                </script>
+                            </div>
+                            <p class="text-gray-700 text-sm">
+                                “Loved the design quality and quick turnaround time. Five stars
+                                from me!”
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="swiper-slide">
+                        <div class="h-full flex flex-col items-center text-center rounded-xl
+                     bg-white/10 backdrop-blur p-6">
+                            <img src="assets/image/users/avatar-4.jpg"
+                                 class="w-24 h-24 rounded-full object-cover mb-4"
+                                 alt="Client 4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Yash Desai</h3>
+                            <div class="flex gap-0.5 mb-4">
+                                <script>
+                                    document.currentScript.parentElement.append(
+                                        ...Array.from({length:5},()=>document.getElementById('star').content.cloneNode(true))
+                                    );
+                                </script>
+                            </div>
+                            <p class="text-gray-700 text-sm">
+                                “They truly care about the client’s vision and make it come alive.”
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CARD 5 -->
+                    <div class="swiper-slide">
+                        <div class="h-full flex flex-col items-center text-center rounded-xl
+                     bg-white/10 backdrop-blur p-6">
+                            <img src="assets/image/users/avatar-5.jpg"
+                                 class="w-24 h-24 rounded-full object-cover mb-4"
+                                 alt="Client 5">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-1">Neha Kapoor</h3>
+                            <div class="flex gap-0.5 mb-4">
+                                <script>
+                                    document.currentScript.parentElement.append(
+                                        ...Array.from({length:5},()=>document.getElementById('star').content.cloneNode(true))
+                                    );
+                                </script>
+                            </div>
+                            <p class="text-gray-700 text-sm">
+                                “Amazing service, friendly team, and top‑notch results!”
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Navigation arrows -->
+            <button class="swiper-button-prev !text-gray-600 hover:!text-gray-900"></button>
+            <button class="swiper-button-next !text-gray-600 hover:!text-gray-900"></button>
+        </div>
+    </div>
+</section>
+<!-- ════════════════════════════════════════════════ -->
+
+<!-- ═════════════ CUSTOM WORKS SECTION ═════════════ -->
+<section id="custom-works" class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12">
+
+        <!-- Illustration -->
+        <div class="md:w-1/2">
+            <!-- change src to your svg/png -->
+            <img src="assets/image/img9.png"
+                 alt="Custom works illustration"
+                 class="w-full h-auto">
+        </div>
+
+        <!-- Text block -->
+        <div class="md:w-1/2 text-center md:text-left">
+
+            <!-- Small heading -->
+            <h3 class="text-3xl font-extrabold text-[#0A46FF] mb-6">
+                Custom Works?
+            </h3>
+
+            <!-- Outlined mega headline -->
+            <h2 class="leading-tight mb-8">
+        <span class="block stroke-text text-5xl sm:text-6xl lg:text-7xl font-extrabold">
+          Built Smart.
+        </span>
+                <span class="block stroke-text text-5xl sm:text-6xl lg:text-7xl font-extrabold">
+          Built Custom.
+        </span>
+                <span class="block stroke-text text-5xl sm:text-6xl lg:text-7xl font-extrabold">
+          Built for You.
+        </span>
+            </h2>
+
+            <!-- Paragraph -->
+            <p class="text-lg text-gray-700 max-w-xl mx-auto md:mx-0 mb-10">
+                You’ve got the vision — we’ve got the skill to make it real.
+                From concept to flawless execution, we deliver web solutions
+                that stand out and perform.
+            </p>
+
+            <!-- CTA button -->
+            <a href="#contact"
+               class="inline-block px-10 py-4 rounded-full
+                bg-gradient-to-r from-blue-500 to-blue-600
+                text-white font-semibold shadow-md
+                hover:brightness-110 transition">
+                Contact US
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- ════════════════════════════════════════════════ -->
+
+<!-- ═════════════ BUILD‑A‑SITE SECTION ═════════════ -->
+<section id="build-a-site" class="py-24 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Card -->
+        <div class="relative overflow-hidden rounded-3xl flex flex-col lg:flex-row items-center gap-12"
+             style="background-image:url('pattern-bg.png'); background-size:cover; background-position:center;">
+
+            <!-- LEFT: Text -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+
+                <!-- Logo‑style headline -->
+                <h2 class="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight">
+                    Build‑A‑Site
+                </h2>
+
+                <!-- Paragraph -->
+                <p class="text-xl leading-relaxed tracking-wide text-black font-semibold max-w-xl mx-auto lg:mx-0">
+                    Build‑A‑Site is a simple and interactive way to create your own website
+                    in just minutes. Choose from multiple design options, customize your
+                    content, and watch your site come to life — no coding needed.
+                </p>
+            </div>
+
+            <!-- RIGHT: Laptop mockup -->
+            <div class="lg:w-1/2 flex justify-center">
+                <!-- replace src with your real mockup -->
+                <img src="assets/image/laptop-mockup.png"
+                     alt="Website builder preview"
+                     class="">
+            </div>
+
+            <!-- decorative colourful blocks (optional) -->
+            <img src="decor-flowers.png"
+                 class="pointer-events-none absolute -z-10 inset-0 w-full h-full object-cover opacity-50"
+                 alt="">
+        </div>
+    </div>
+</section>
+<!-- ════════════════════════════════════════════════ -->
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="bg-[#f8f7f1] text-gray-700 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Top row -->
+        <div class="grid gap-12 sm:grid-cols-3 lg:grid-cols-3">
+
+            <!-- Brand / Short blurb -->
+            <div>
+                <div class="flex items-center mb-4 space-x-2">
+<!--                    <img src="logo2.png" alt="Webstore Logo" class="h-10 w-auto">-->
+                    <span class="font-extrabold text-xl">Webstore</span>
+                </div>
+                <p class="max-w-xs text-sm">
+                    Building smart, custom web solutions that stand out and perform.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Navigate</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home"       class="hover:text-[#0A46FF]">Home</a></li>
+                    <li><a href="#about"      class="hover:text-[#0A46FF]">About</a></li>
+                    <li><a href="#services"   class="hover:text-[#0A46FF]">Services</a></li>
+                    <li><a href="#portfolio"  class="hover:text-[#0A46FF]">Portfolio</a></li>
+                    <li><a href="#contact"    class="hover:text-[#0A46FF]">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources / Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2">
+                    <li><a href="#faq" class="hover:text-[#0A46FF]">FAQs</a></li>
+                    <li><a href="#reviews" class="hover:text-[#0A46FF]">Client Reviews</a></li>
+                    <li><a href="#" class="hover:text-[#0A46FF]">Blog (Soon)</a></li>
+                    <li><a href="#" class="hover:text-[#0A46FF]">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-[#0A46FF]">Terms of Service</a></li>
+                </ul>
+            </div>
+
+
+        </div><!-- /Top row -->
+
+        <!-- Divider -->
+        <div class="border-t border-gray-300 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 text-sm">
+
+            <p>© <span id="year"></span> Webstore. All rights reserved.</p>
+
+            <div class="flex space-x-4">
+                <!-- Social icons (Heroicons) -->
+                <a href="#" class="hover:text-[#0A46FF]" aria-label="Twitter">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                                d="M8.29 20.251c7.547 0 11.675-6.155 11.675-11.49 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637 4.077 4.077 0 0 0 1.804-2.23 8.19 8.19 0 0 1-2.605.981 4.1 4.1 0 0 0-6.993 3.743A11.65 11.65 0 0 1 3.115 4.59a4.055 4.055 0 0 0-.554 2.062 4.1 4.1 0 0 0 1.82 3.415 4.066 4.066 0 0 1-1.856-.507v.05a4.107 4.107 0 0 0 3.292 4.011 4.1 4.1 0 0 1-1.849.07 4.11 4.11 0 0 0 3.829 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.819"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-[#0A46FF]" aria-label="LinkedIn">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.865-3.058-1.865 0-2.151 1.46-2.151 2.968v5.694h-3v-10h2.888v1.367h.041c.403-.763 1.386-1.568 2.856-1.568 3.053 0 3.617 2.01 3.617 4.623v5.578z"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-[#0A46FF]" aria-label="GitHub">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                                d="M12 0a12 12 0 0 0-3.792 23.394c.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.042-3.338.726-4.042-1.604-4.042-1.604-.546-1.364-1.333-1.728-1.333-1.728-1.09-.736.083-.722.083-.722 1.205.083 1.84 1.235 1.84 1.235 1.07 1.809 2.806 1.287 3.492.984.107-.769.42-1.288.763-1.586-2.665-.302-5.467-1.332-5.467-5.93 0-1.31.47-2.381 1.236-3.221-.124-.303-.536-1.522.117-3.176 0 0 1.008-.322 3.301 1.23a11.48 11.48 0 0 1 3.005-.404 11.5 11.5 0 0 1 3.005.404c2.291-1.553 3.297-1.23 3.297-1.23.655 1.653.243 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.369.823 1.096.823 2.209 0 1.593-.014 2.873-.014 3.264 0 .32.216.694.825.576a12.005 12.005 0 0 0-3.807-23.396z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- ════════════════════════════════════════════════ -->
+
+<!-- ═════════════ SCRIPTS ═════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

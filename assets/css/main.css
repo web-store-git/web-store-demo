@@ -1,0 +1,10 @@
+
+.transition-transform{
+    transition:transform .3s ease-in-out
+}
+
+.stroke-text{
+    color: transparent;               /* make fill transparent   */
+    -webkit-text-stroke: 2px #0A46FF; /* blue outline (WebKit)   */
+    text-stroke: 2px #0A46FF;         /* future‑proof spec       */
+}
